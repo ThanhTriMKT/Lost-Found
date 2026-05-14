@@ -1,59 +1,95 @@
-# Lost & Found — Ứng dụng Tìm và Gửi Đồ Bị Mất
+# 2212477 – Phan Thanh Trí
+# TÀI LIỆU TỔNG QUAN DỰ ÁN
 
-Hệ thống web hỗ trợ sinh viên đăng tải thông tin về các vật dụng bị mất hoặc nhặt được trong khuôn viên trường học.
+## ỨNG DỤNG TÌM VÀ GỬI ĐỒ BỊ MẤT (LOST & FOUND) CHO SINH VIÊN
 
-## Công nghệ
+---
 
-| Thành phần | Công nghệ |
-|---|---|
-| Frontend | React + Next.js 15 |
-| Styling | Tailwind CSS |
-| Backend | Supabase |
-| Database | PostgreSQL (Supabase) |
-| Auth | Supabase Auth |
-| Realtime | Supabase Realtime |
-| Storage | Supabase Storage |
+## 1. Giới thiệu dự án
 
-## Tính năng
+### 1.1 Tên đề tài
+Xây dựng ứng dụng Lost & Found hỗ trợ sinh viên tìm kiếm và trả lại đồ thất lạc sử dụng React và Supabase.
 
-- ✅ Đăng ký / Đăng nhập
-- ✅ Đăng bài MẤT ĐỒ hoặc NHẶT ĐƯỢC
-- ✅ Tìm kiếm & lọc theo loại, danh mục
-- ✅ Nhắn tin liên hệ với người đăng
-- ✅ Quản lý bài đăng cá nhân
-- ✅ Đánh dấu đã tìm được
-- ✅ Upload ảnh qua URL
+### 1.2 Mô tả đề tài
+Hệ thống Lost & Found là một nền tảng web hỗ trợ sinh viên đăng tải thông tin về các vật dụng bị mất hoặc nhặt được trong khuôn viên trường học.
 
-## Cài đặt
+Người dùng có thể:
+- Đăng bài mất đồ
+- Đăng bài nhặt được đồ
+- Tìm kiếm bài đăng liên quan
+- Nhắn tin trao đổi với nhau
+- Nhận thông báo realtime khi có cập nhật mới
 
-### 1. Clone và cài dependencies
+Hệ thống xây dựng bằng React cho frontend và Supabase cho backend, database, authentication và realtime.
 
+### 1.3 Lý do chọn đề tài
+Trong môi trường đại học, sinh viên thường xuyên:
+- Làm mất thẻ sinh viên
+- Mất ví
+- Mất chìa khóa
+- Bỏ quên laptop, tai nghe, áo khoác,...
+
+Hiện nay việc tìm kiếm chủ yếu:
+- Đăng Facebook
+- Hỏi trực tiếp
+- Đăng trong group trường
+
+Các phương pháp này:
+- Khó quản lý
+- Dễ trôi bài
+- Không tập trung
+- Thiếu tính xác thực
+
+Vì vậy cần xây dựng một hệ thống tập trung giúp:
+- Tăng khả năng tìm lại đồ
+- Kết nối người mất và người nhặt
+- Giảm thất lạc tài sản trong trường học
+
+---
+
+## 2. Mục tiêu dự án
+
+### 2.1 Mục tiêu chính
+Xây dựng website Lost & Found giúp sinh viên:
+- Nhanh chóng tìm lại tài sản thất lạc thông qua nền tảng tập trung.
+- Tạo ra môi trường chia sẻ thông tin mất/nhặt đồ tin cậy, dễ sử dụng.
+
+---
+
+## 3. Cài đặt và sử dụng
+
+### 3.1 Công nghệ
+- **Frontend:** React + Next.js 15
+- **Styling:** Tailwind CSS
+- **Backend / Database / Auth / Realtime:** Supabase (PostgreSQL)
+
+### 3.2 Hướng dẫn cài đặt
+
+**Bước 1:** Clone và cài dependencies:
 ```bash
 npm install
 ```
 
-### 2. Tạo file `.env.local`
-
+**Bước 2:** Cấu hình biến môi trường:
+Tạo file `.env.local`:
 ```bash
 cp .env.local.example .env.local
 ```
-
-Điền thông tin Supabase vào `.env.local`:
-```
-NEXT_PUBLIC_SUPABASE_URL=https://xxxx.supabase.co
+Và điền thông tin Supabase:
+```env
+NEXT_PUBLIC_SUPABASE_URL=https://your-project-id.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
 ```
 
-### 3. Tạo database trên Supabase
-
+**Bước 3:** Khởi tạo cơ sở dữ liệu:
 Vào **Supabase Dashboard → SQL Editor**, chạy file `supabase/schema.sql`.
 
-### 4. Chạy ứng dụng
-
+**Bước 4:** Chạy ứng dụng:
 ```bash
 npm run dev
 ```
 
-## Hướng dẫn Supabase
+Ứng dụng sẽ chạy tại `http://localhost:3000`.
 
-Xem file `SUPABASE_GUIDE.md` để biết chi tiết cách cấu hình Supabase.
+---
+*Xem file `SUPABASE_GUIDE.md` để biết thêm chi tiết về cấu hình backend.*
