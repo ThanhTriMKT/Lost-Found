@@ -43,9 +43,9 @@ export default async function HomePage({ searchParams }: HomePageProps) {
   const { count: resolvedCount } = await supabase.from("posts").select("*", { count: "exact", head: true }).eq("status", "resolved");
 
   const typeFilters = [
-    { value: "", label: "🔍 Tất cả" },
-    { value: "lost", label: "😟 Đồ bị mất" },
-    { value: "found", label: "🙌 Nhặt được" },
+    { value: "", label: "Tất cả" },
+    { value: "lost", label: "Đồ bị mất" },
+    { value: "found", label: "Nhặt được" },
   ];
 
   return (
@@ -55,7 +55,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
         <div className="container">
           <div style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: "24px", maxWidth: "760px", margin: "0 auto" }}>
             <span className="badge badge-coral" style={{ fontSize: "0.85rem", padding: "6px 20px" }}>
-              🎓 Hệ thống Lost & Found dành cho sinh viên
+              Hệ thống Lost & Found dành cho sinh viên
             </span>
             <h1 style={{ fontSize: "var(--fs-display)", fontWeight: 800, lineHeight: 1.15, letterSpacing: "-0.03em", color: "var(--clr-text)", margin: 0 }}>
               Tìm lại{" "}
@@ -74,12 +74,11 @@ export default async function HomePage({ searchParams }: HomePageProps) {
             {/* Stats */}
             <div style={{ display: "flex", gap: "24px", flexWrap: "wrap", justifyContent: "center" }}>
               {[
-                { label: "Đang mất", value: lostCount ?? 0, color: "var(--clr-coral)", emoji: "😟" },
-                { label: "Nhặt được", value: foundCount ?? 0, color: "var(--clr-sky)", emoji: "🙌" },
-                { label: "Đã tìm lại", value: resolvedCount ?? 0, color: "#4CAF50", emoji: "✅" },
+                { label: "Đang mất", value: lostCount ?? 0, color: "var(--clr-coral)" },
+                { label: "Nhặt được", value: foundCount ?? 0, color: "var(--clr-sky)" },
+                { label: "Đã tìm lại", value: resolvedCount ?? 0, color: "#4CAF50" },
               ].map((s) => (
                 <div key={s.label} style={{ background: "#fff", borderRadius: "16px", border: `3px solid ${s.color}`, padding: "16px 24px", boxShadow: "4px 6px 0 rgba(0,0,0,0.08)", textAlign: "center", minWidth: "120px" }}>
-                  <div style={{ fontSize: "1.5rem" }}>{s.emoji}</div>
                   <div style={{ fontSize: "2rem", fontWeight: 800, color: "var(--clr-text)", lineHeight: 1 }}>{s.value}</div>
                   <div style={{ fontSize: "0.78rem", fontWeight: 700, color: "var(--clr-text-muted)" }}>{s.label}</div>
                 </div>
@@ -93,7 +92,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
               <div style={{ position: "relative" }}>
                 <input type="text" name="query" defaultValue={query} placeholder="Tìm theo tên đồ vật, địa điểm..." className="clay-input" style={{ paddingRight: "110px" }} />
                 <button type="submit" className="btn btn-primary" style={{ position: "absolute", right: "6px", top: "6px", padding: "6px 16px", minHeight: "auto", height: "calc(100% - 12px)", fontSize: "0.8rem" }}>
-                  🔍 Tìm
+                  Tìm
                 </button>
               </div>
             </form>
@@ -106,10 +105,10 @@ export default async function HomePage({ searchParams }: HomePageProps) {
         <div className="container">
           <div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap", alignItems: "center" }}>
             <Link href="/dashboard/new?type=lost" className="btn btn-primary" style={{ gap: "6px" }}>
-              😟 Đăng bài MẤT ĐỒ
+              Đăng bài MẤT ĐỒ
             </Link>
             <Link href="/dashboard/new?type=found" className="btn" style={{ background: "var(--clr-sky)", color: "#fff", border: "3px solid #3ab5ac", boxShadow: "var(--shadow-sky)", gap: "6px" }}>
-              🙌 Đăng bài NHẶT ĐƯỢC
+              Đăng bài NHẶT ĐƯỢC
             </Link>
           </div>
         </div>
@@ -157,7 +156,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
                     )}
                     <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "8px", marginBottom: "10px" }}>
                       <span className={`badge ${post.type === "lost" ? "badge-coral" : "badge-sky"}`}>
-                        {post.type === "lost" ? "😟 Mất đồ" : "🙌 Nhặt được"}
+                        {post.type === "lost" ? "Mất đồ" : "Nhặt được"}
                       </span>
                       <span style={{ fontSize: "0.78rem", color: "var(--clr-text-muted)", fontWeight: 600 }}>
                         {new Date(post.created_at).toLocaleDateString("vi-VN")}
@@ -171,7 +170,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
                         {CATEGORY_LABELS[post.category as ItemCategory]}
                       </span>
                       <span style={{ fontSize: "0.78rem", background: "var(--clr-surface)", border: "2px solid var(--clr-border)", borderRadius: "8px", padding: "2px 8px", fontWeight: 600 }}>
-                        📍 {post.location}
+                        {post.location}
                       </span>
                     </div>
                     {post.description && (
@@ -212,12 +211,12 @@ export default async function HomePage({ searchParams }: HomePageProps) {
             </>
           ) : (
             <div className="empty-state" style={{ maxWidth: "500px", margin: "0 auto" }}>
-              <span className="empty-state-icon">🔍</span>
+
               <p style={{ fontWeight: 800, fontSize: "var(--fs-h2)", color: "var(--clr-text)", margin: "0 0 8px" }}>
                 {query ? "Không tìm thấy bài đăng!" : "Chưa có bài đăng nào!"}
               </p>
               <p style={{ color: "var(--clr-text-muted)", margin: "0 0 28px" }}>
-                {query ? "Thử lại với từ khóa khác 🌟" : "Hãy đăng bài đầu tiên 🚀"}
+                {query ? "Thử lại với từ khóa khác" : "Hãy đăng bài đầu tiên"}
               </p>
               <Link href="/dashboard/new" className="btn btn-primary">
                 {query ? "Xem tất cả bài đăng" : "+ Đăng bài ngay"}
