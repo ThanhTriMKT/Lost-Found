@@ -50,7 +50,6 @@ export default function RegisterPage() {
             fontSize: "2rem",
             margin: "0 auto 20px",
           }}>
-            🎉
           </div>
           <h1 style={{
             fontSize: "var(--fs-h1)",
@@ -62,7 +61,7 @@ export default function RegisterPage() {
             Tạo tài khoản
           </h1>
           <p style={{ color: "var(--clr-text-muted)", fontWeight: 500, margin: 0 }}>
-            Bắt đầu hành trình viết lách của bạn 🌟
+            Tham gia hệ thống Lost & Found
           </p>
         </div>
 

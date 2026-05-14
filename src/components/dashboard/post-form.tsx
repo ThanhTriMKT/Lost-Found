@@ -61,7 +61,7 @@ export function PostForm({ post, defaultType = "lost" }: PostFormProps) {
       <div>
         <label className="clay-label">Loại bài đăng <span style={{ color: "var(--clr-coral)" }}>*</span></label>
         <div style={{ display: "flex", gap: "12px" }}>
-          {([["lost", "😟 Tôi BỊ MẤT đồ", "var(--clr-coral)", "#e05555"], ["found", "🙌 Tôi NHẶT ĐƯỢC đồ", "var(--clr-sky)", "#3ab5ac"]] as const).map(([val, label, color, border]) => (
+          {([["lost", "Tôi BỊ MẤT đồ", "var(--clr-coral)", "#e05555"], ["found", "Tôi NHẶT ĐƯỢC đồ", "var(--clr-sky)", "#3ab5ac"]] as const).map(([val, label, color, border]) => (
             <label key={val} style={{ flex: 1, cursor: "pointer", border: `3px solid ${type === val ? border : "var(--clr-border)"}`, borderRadius: "var(--radius-md)", padding: "14px 18px", background: type === val ? `${color}15` : "#fff", display: "flex", alignItems: "center", gap: "12px" }}>
               <input type="radio" value={val} checked={type === val} onChange={() => setType(val)} style={{ width: 18, height: 18 }} />
               <span style={{ fontWeight: 700, fontSize: "0.9rem" }}>{label}</span>
@@ -120,7 +120,7 @@ export function PostForm({ post, defaultType = "lost" }: PostFormProps) {
       <div style={{ display: "flex", justifyContent: "flex-end", gap: "12px", paddingTop: "8px" }}>
         <button type="button" onClick={() => router.back()} className="btn btn-ghost">Hủy</button>
         <button type="submit" disabled={loading} className="btn btn-primary">
-          {loading ? "Đang lưu..." : isEditing ? "💾 Cập nhật" : "✦ Đăng bài"}
+          {loading ? "Đang lưu..." : isEditing ? "Cập nhật" : "Đăng bài"}
         </button>
       </div>
     </form>

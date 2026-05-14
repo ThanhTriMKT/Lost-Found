@@ -18,7 +18,7 @@ export default async function NewPostPage({ searchParams }: Props) {
     <main style={{ padding: "48px 0 96px", position: "relative", zIndex: 1 }}>
       <div className="container" style={{ maxWidth: "720px" }}>
         <h1 style={{ fontSize: "var(--fs-h1)", fontWeight: 800, color: "var(--clr-text)", margin: "0 0 8px", letterSpacing: "-0.02em" }}>
-          {defaultType === "lost" ? "😟 Đăng bài MẤT ĐỒ" : "🙌 Đăng bài NHẶT ĐƯỢC"}
+          {defaultType === "lost" ? "Đăng bài MẤT ĐỒ" : "Đăng bài NHẶT ĐƯỢC"}
         </h1>
         <p style={{ color: "var(--clr-text-muted)", fontWeight: 600, margin: "0 0 40px" }}>Điền thông tin chi tiết để tăng khả năng tìm lại đồ</p>
         <div style={{ background: "#fff", borderRadius: "var(--radius-xl)", border: "3px solid var(--clr-lavender)", padding: "40px", boxShadow: "var(--shadow-lavender)" }}>

@@ -15,7 +15,7 @@ export async function Header() {
       <div className="container">
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", height: "76px", gap: "16px" }}>
           <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: "10px" }}>
-            <span style={{ width: "40px", height: "40px", borderRadius: "14px", background: "var(--clr-coral)", border: "3px solid #e05555", boxShadow: "3px 4px 0px var(--clr-coral-shadow)", display: "inline-flex", alignItems: "center", justifyContent: "center", fontSize: "1.25rem", flexShrink: 0 }}>🔍</span>
+            <span style={{ width: "40px", height: "40px", borderRadius: "14px", background: "var(--clr-coral)", border: "3px solid #e05555", boxShadow: "3px 4px 0px var(--clr-coral-shadow)", display: "inline-flex", alignItems: "center", justifyContent: "center", fontSize: "1.25rem", flexShrink: 0 }}></span>
             <span style={{ fontWeight: 800, fontSize: "1.2rem", color: "var(--clr-text)", letterSpacing: "-0.02em" }}>Lost & Found</span>
           </Link>
           <nav style={{ display: "flex", alignItems: "center", gap: "8px", flexWrap: "wrap" }}>
@@ -33,7 +33,7 @@ export async function Header() {
             ) : (
               <>
                 <Link href="/login" className="btn btn-ghost" style={{ padding: "8px 18px", minHeight: "40px", fontSize: "0.9rem" }}>Đăng nhập</Link>
-                <Link href="/register" className="btn btn-primary" style={{ padding: "8px 20px", minHeight: "40px", fontSize: "0.9rem" }}>Đăng ký 🎉</Link>
+                <Link href="/register" className="btn btn-primary" style={{ padding: "8px 20px", minHeight: "40px", fontSize: "0.9rem" }}>Đăng ký</Link>
               </>
             )}
           </nav>

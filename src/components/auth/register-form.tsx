@@ -116,7 +116,7 @@ export function RegisterForm() {
         disabled={loading}
         className="btn btn-sky btn-full"
       >
-        {loading ? "Đang xử lý..." : "Tạo tài khoản 🚀"}
+        {loading ? "Đang xử lý..." : "Tạo tài khoản"}
       </button>
 
       <p style={{ textAlign: "center", fontSize: "0.9rem", color: "var(--clr-text-muted)", fontWeight: 600 }}>

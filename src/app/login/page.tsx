@@ -69,7 +69,6 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
             fontSize: "2rem",
             margin: "0 auto 20px",
           }}>
-            🔑
           </div>
           <h1 style={{
             fontSize: "var(--fs-h1)",
@@ -85,13 +84,13 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
             fontWeight: 500,
             margin: 0,
           }}>
-            Quản lý blog của bạn
+            Quản lý tài khoản của bạn
           </p>
         </div>
 
         {params.message && (
           <div className="alert alert-success" style={{ marginTop: "24px" }}>
-            ✅ {params.message}
+            {params.message}
           </div>
         )}
 

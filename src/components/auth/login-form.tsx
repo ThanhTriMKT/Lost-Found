@@ -30,7 +30,7 @@ export function LoginForm() {
       if (error) {
         setError(
           error.message === "Invalid login credentials"
-            ? "Email hoặc mật khẩu không đúng 😢"
+            ? "Email hoặc mật khẩu không đúng"
             : error.message
         );
         return;
@@ -140,7 +140,7 @@ export function LoginForm() {
           disabled={loading}
           className="btn btn-primary btn-full"
         >
-          {loading ? "Đang xử lý..." : "Đăng nhập 🚀"}
+          {loading ? "Đang xử lý..." : "Đăng nhập"}
         </button>
       </form>
 
@@ -150,7 +150,7 @@ export function LoginForm() {
           href="/register"
           style={{ color: "var(--clr-coral)", fontWeight: 800, textDecoration: "none" }}
         >
-          Đăng ký ngay 🎉
+          Đăng ký ngay
         </Link>
       </p>
     </div>
